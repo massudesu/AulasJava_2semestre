@@ -7,9 +7,8 @@ public class Bicicleta {
     public String cor;
     public Integer assentos;
     public Integer tamAro;
+
     //metodo  construtor
-
-
     public Bicicleta(Integer marcha, String cor, Integer assentos, Integer tamAro) {
         this.marcha = marcha;
         this.cor = cor;

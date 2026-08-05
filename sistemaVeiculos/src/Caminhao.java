@@ -6,8 +6,6 @@ public class Caminhao {
     public Integer potencia;
 
     //metodos construtores
-
-
     public Caminhao(String modelo, String marca, Integer eixos, Integer potencia) {
         this.modelo = modelo;
         this.marca = marca;

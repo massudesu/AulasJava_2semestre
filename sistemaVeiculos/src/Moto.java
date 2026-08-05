@@ -7,8 +7,6 @@ public class Moto {
 
 
     //metodos construtores
-
-
     public Moto(String modelo, String marca, Integer potencia, String cor) {
         this.modelo = modelo;
         this.marca = marca;
