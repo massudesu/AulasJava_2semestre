@@ -6,9 +6,15 @@ public class Carro{
     public String numPortas;
     public String cor;
     public Integer potencia;
-
     //metodos construtores
 
+    //ATILA
+    public Carro(String modelo, String marca, String numPortas) {
+        this.modelo = modelo;
+        this.marca = marca;
+        this.numPortas= numPortas;
+    }
+    //
 
     public Carro(String modelo, String marca, String cor, String numPortas, Integer potencia) {
         this.modelo = modelo;
@@ -17,6 +23,7 @@ public class Carro{
         this.numPortas = numPortas;
         this.potencia= potencia;
     }
+
 
     public Carro(String modelo, String marca, Integer potencia) {
         this.modelo = modelo;
@@ -43,7 +50,7 @@ public class Carro{
 
     @Override
     public String toString() {
-        return "Carro:" +
+        return "\nCarro:" +
                 "\n modelo ='" + modelo + '\'' +
                 ",\n marca ='" + marca + '\'' +
                 ",\n numPortas ='" + numPortas + '\'' +

@@ -1,7 +1,29 @@
-import static java.lang.IO.*;
-
+import  static java.lang.IO.*;
+import java.util.ArrayList;
+import java.util.List;
 
 void main() {
+
+    //ATILA
+//    List<Carro> listaCarros = new ArrayList<>();
+//
+//    for (int i = 0; i <= 3; i++) {
+//        println("Digite os dados do carro "+(i+1));
+//
+//        String modelo = readln("Digite o modelo do carro " + (i+1) + ": ");
+//        String marca = readln("Digite a marca do carro " + (i+1) + ": ");
+//        String numPortas = readln("Digite o numero de portas do carro " + (i+1) + ": ");
+//
+//        Carro carro = new Carro(modelo, marca, numPortas);
+//        listaCarros.add(carro);
+//    }
+//
+//    println(listaCarros);
+
+
+
+    //FIAMA
+
     Carro carro = new Carro("Lancer evoX", "Mitsubishi","Branco", "4", 295);
     Carro carro2 = new Carro("Lancer evoX", "Mitsubishi", 295);
     println(carro);
