@@ -5,21 +5,23 @@ public class Carro{
     public String marca;
     public String numPortas;
     public String cor;
-    public String potencia;
+    public Integer potencia;
 
     //metodos construtores
 
 
-    public Carro(String modelo, String marca, String cor, String numPortas) {
+    public Carro(String modelo, String marca, String cor, String numPortas, Integer potencia) {
         this.modelo = modelo;
         this.marca = marca;
         this.cor = cor;
         this.numPortas = numPortas;
+        this.potencia= potencia;
     }
 
-    public Carro(String modelo, String marca) {
+    public Carro(String modelo, String marca, Integer potencia) {
         this.modelo = modelo;
         this.marca = marca;
+        this.potencia= potencia;
     }
 
     //metodos
@@ -42,10 +44,10 @@ public class Carro{
     @Override
     public String toString() {
         return "Carro:" +
-                "\nmodelo='" + modelo + '\'' +
-                ",\n marca='" + marca + '\'' +
-                ",\n numPortas='" + numPortas + '\'' +
-                ",\n cor='" + cor + '\'' +
-                ",\n potencia='" + potencia + '\'';
+                "\n modelo ='" + modelo + '\'' +
+                ",\n marca ='" + marca + '\'' +
+                ",\n numPortas ='" + numPortas + '\'' +
+                ",\n cor ='" + cor + '\'' +
+                ",\n potencia ='" + potencia + "cv"+ '\'';
     }
 }

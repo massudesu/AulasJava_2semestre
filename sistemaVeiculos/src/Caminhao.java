@@ -2,22 +2,23 @@ public class Caminhao {
     //atributos
     public String modelo;
     public String marca;
-    public String tamanho;
-    public String potencia;
+    public Integer eixos;
+    public Integer potencia;
 
     //metodos construtores
 
 
-    public Caminhao(String modelo, String marca, String tamanho, String potencia) {
+    public Caminhao(String modelo, String marca, Integer eixos, Integer potencia) {
         this.modelo = modelo;
         this.marca = marca;
-        this.tamanho = tamanho;
+        this.eixos = eixos;
         this.potencia = potencia;
     }
 
-    public Caminhao(String marca, String tamanho) {
+    public Caminhao(String marca, Integer eixos, Integer potencia) {
         this.marca = marca;
-        this.tamanho = tamanho;
+        this.eixos = eixos;
+        this.potencia = potencia;
     }
 
     //metodos
@@ -40,9 +41,9 @@ public class Caminhao {
     @Override
     public String toString() {
         return "Caminhao:" +
-                "\nmodelo='" + modelo + '\'' +
-                ",\n marca='" + marca + '\'' +
-                ",\n tamanho='" + tamanho + '\'' +
-                ",\n potencia='" + potencia + '\'';
+                "\n modelo ='" + modelo + '\'' +
+                ",\n marca ='" + marca + '\'' +
+                ",\n eixos ='" + eixos + '\'' +
+                ",\n potencia ='" + potencia + "cv"+ '\'';
     }
 }

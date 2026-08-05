@@ -1,21 +1,24 @@
 public class Moto {
     //atributos
     public String modelo;
-    public String potencia;
+    public String marca;
+    public Integer potencia;
     public String cor;
 
 
     //metodos construtores
 
 
-    public Moto(String modelo, String potencia, String cor) {
+    public Moto(String modelo, String marca, Integer potencia, String cor) {
         this.modelo = modelo;
+        this.marca = marca;
         this.potencia = potencia;
         this.cor = cor;
     }
 
-    public Moto(String modelo, String potencia) {
+    public Moto(String modelo, String marca, Integer potencia) {
         this.modelo = modelo;
+        this.marca = marca;
         this.potencia = potencia;
     }
 
@@ -39,8 +42,10 @@ public class Moto {
     @Override
     public String toString() {
         return "Moto:" +
-                "\nmodelo='" + modelo + '\'' +
-                ",\n potencia='" + potencia + '\'' +
-                "\n, cor='" + cor + '\'';
+                "\n modelo ='" + modelo + '\'' +
+                ",\n marca ='"+ marca + '\''+
+                ",\n cor ='" + cor + '\''+
+                ",\n potencia ='" + potencia + "cc"+ '\'';
+
     }
 }
