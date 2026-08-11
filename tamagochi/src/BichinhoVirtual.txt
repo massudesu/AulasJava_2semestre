@@ -1,0 +1,9 @@
+o desafio: Criar o BichinhoVirtual
+o objetivo é impedir que alguém altere a fome ou a energia do pet diretamente (ex: pet.fome = -500), forçando o uso de métodos validados.
+
+regras de negocio(O encapsulamento) Os Atributos nome, fome, energia e humor devem ser privados (private).
+A fome varia de 0(saciado) a 100(faminto).
+A energia varia de 0(esgotado) a 100 (totalmente pilhado).
+O humor não deve ter um setHumor livre;
+ele deve ser calculado automaticamente pelo método
+getHumor() com base na fome e na energia.
