@@ -10,8 +10,7 @@ public class Bichinho {
     public Bichinho(String nome, Integer fome, Integer energia, String humor) {
         this.nome = nome;
         this.fome = fome;
-        this.energia = energia;
-        this.nome = nome;
+        this.energia=energia;
         getHumor(humor);
 
 
@@ -56,7 +55,7 @@ public class Bichinho {
     }
 
     public void setEnergia(Integer energia) {
-        if (energia >= 0) {
+        if (energia <= 0) {
             this.energia = 0;
         } else if (energia > 100) {
             this.energia = 100;
