@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AulasJava_2semestre.iml" filepath="$PROJECT_DIR$/.idea/AulasJava_2semestre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/login_validacao/login_validacao.iml" filepath="$PROJECT_DIR$/login_validacao/login_validacao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sistemaLogin/sistemaLogin.iml" filepath="$PROJECT_DIR$/sistemaLogin/sistemaLogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sistemaVeiculos/sistemaVeiculos.iml" filepath="$PROJECT_DIR$/sistemaVeiculos/sistemaVeiculos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/teste/teste.iml" filepath="$PROJECT_DIR$/teste/teste.iml" />
+    </modules>
+  </component>
+</project>
