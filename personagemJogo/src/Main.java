@@ -1,29 +1,123 @@
-//Os atributos nome, vida, energia e nivel devem ser
-// private.
-//A vida deve variar entre 0 e 100.
-//A energia deve variar entre 0 e 100.
-//O nivel deve começar em 1.
-//Não deve existir setVida() nem setEnergia() livremente.
-//O método receberDano(int dano) deve diminuir a vida.
-//O método descansar() deve recuperar energia.
-//A energia recuperada não pode ultrapassar 100.
-//O método atacar() deve consumir energia.
-//Um personagem sem energia suficiente não pode atacar.
-//Quando a vida chegar a 0, o personagem deve ser considerado derrotado.
-//O método getStatus() deve informar automaticamente se o
-// personagem está Vivo ou Derrotado, sem existir um atributo
-// status para ser alterado manualmente.
-
+import static java.lang.IO.*;
 
 void main() {
-    Personagem personagem = new Personagem("nicolas", 100, 8);
-    IO.println(personagem);
-    IO.println("Você tem: " + personagem.getVida() + " de vida ");
-    IO.println("Você tem: " + personagem.getEnergia() + " de energia ");
-//    int dano = Integer.parseInt(IO.readln("Dano recebido: "));
-//    personagem.setReceberDano(dano);
-//    IO.println("Você ficou com: " + personagem.getVida() + " de vida");
-    String descansar = IO.readln("Precisa descansar(s/n): ");
-    personagem.setDescansar(descansar);
-    IO.println("Você descansou e esta com: " + personagem.getEnergia()+ " de energia");
+
+    println("===== BATALHA =====");
+
+    String nome = readln("Digite o nome do seu personagem: ");
+    Personagem personagem = new Personagem(nome, 100, 100);
+    Monstro monstro = new Monstro("Goblin", 100, 15);
+
+    println("Um " + monstro.getNome() + " apareceu!");
+    println("Vida do monstro: " + monstro.getVida());
+
+    int opcao;
+
+    do {
+
+        println("==============================");
+        println("          MENU");
+        println("==============================");
+        println("1 - Ver status");
+        println("2 - Atacar");
+        println("3 - Descansar");
+        println("4 - Sair");
+        println("==============================");
+        String entrada = readln("Escolha uma opção: ");
+
+        try {
+            opcao = Integer.parseInt(entrada);
+        } catch (NumberFormatException e) {
+            opcao = 0;
+        }
+
+        switch (opcao) {
+
+            case 1:
+
+                println("===== SEU PERSONAGEM =====");
+                println("Nome: " + personagem.getNome());
+                println("Vida: " + personagem.getVida());
+                println("Energia: " + personagem.getEnergia());
+                println("Nível: " + personagem.getNivel());
+                println("Status: " + personagem.getStatus());
+
+                println("===== MONSTRO =====");
+                println("Nome: " + monstro.getNome());
+                println("Vida: " + monstro.getVida());
+                println("Dano: " + monstro.getDano());
+                println("Status: " + monstro.getStatus());
+
+                break;
+
+            case 2:
+
+                if (personagem.getStatus().equals("Derrotado")) {
+                    println("Você está derrotado!");
+                    break;
+                }
+
+                if (monstro.getStatus().equals("Derrotado")) {
+                    println("O monstro já foi derrotado!");
+                    break;
+                }
+
+
+                boolean atacou = personagem.atacar(monstro);
+
+
+                if (atacou && monstro.getStatus().equals("Vivo")) {
+
+                    monstro.atacar(personagem);
+
+                }
+
+
+                if (monstro.getStatus().equals("Derrotado")) {
+
+                    println("==============================");
+                    println("       VOCÊ VENCEU!");
+                    println("==============================");
+
+                } else if (personagem.getStatus().equals("Derrotado")) {
+
+                    println("==============================");
+                    println("       VOCÊ PERDEU!");
+                    println("==============================");
+                }
+
+                break;
+
+            case 3:
+
+                if (personagem.getStatus().equals("Derrotado")) {
+
+                    println("Você está derrotado e não pode descansar!");
+
+                } else if (monstro.getStatus().equals("Derrotado")) {
+
+                    println("O monstro já foi derrotado!");
+
+                } else {
+
+                    personagem.descansar();
+
+
+                    println("Cuidado! O monstro aproveitou!");
+                    monstro.atacar(personagem);
+                }
+
+                break;
+
+            case 4:
+
+                println("Saindo da batalha...");
+
+                break;
+
+            default:
+
+                println("Opção inválida!");
+        }
+    } while (opcao != 4);
 }
