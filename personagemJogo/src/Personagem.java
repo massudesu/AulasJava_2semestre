@@ -1,46 +1,97 @@
 public class Personagem {
 
     private String nome;
-    private Integer vida;
-    private Integer energia;
-    private Integer nivel;
-    private Integer receberDano;
-    private Integer descansar;
+    private int vida;
+    private int energia;
+    private int nivel;
 
-    public Personagem(String nome, Integer vida, Integer energia) {
+    public Personagem(String nome, int vida, int energia) {
         this.nome = nome;
-        this.vida = vida;
-        this.energia = energia;
+        this.vida = limitarValor(vida);
+        this.energia = limitarValor(energia);
+        this.nivel = 1;
     }
 
-    public Integer getVida() {
-
-        if(vida > 0){
-            return vida;
-        }else {
-            IO.println("Voce morreu");
+    private int limitarValor(int valor) {
+        if (valor < 0) {
+            return 0;
         }
+
+        if (valor > 100) {
+            return 100;
+        }
+
+        return valor;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getVida() {
         return vida;
     }
-    public Integer getEnergia() {
+
+    public int getEnergia() {
         return energia;
     }
-    public Integer getNivel() {
-        this.nivel= 1;
+
+    public int getNivel() {
         return nivel;
     }
 
-    public void setReceberDano(Integer dano){
-        this.vida -= dano;
-    }
+    public void receberDano(int dano) {
 
-    public void setDescansar(String descansar){
-        if (descansar.equals("s")){
-            this.energia = 100;
+        if (dano < 0) {
+            return;
         }
 
+        vida -= dano;
 
+        if (vida < 0) {
+            vida = 0;
+        }
     }
 
+    public void descansar() {
 
+        energia += 20;
+
+        if (energia > 100) {
+            energia = 100;
+        }
+
+        System.out.println(nome + " descansou!");
+        System.out.println("Energia atual: " + energia);
+    }
+
+    public boolean atacar(Monstro monstro) {
+
+        int custoEnergia = 20;
+        int dano = 25;
+
+        if (energia < custoEnergia) {
+            System.out.println("Energia insuficiente para atacar!");
+            return false;
+        }
+
+        energia -= custoEnergia;
+
+        System.out.println("\n" + nome + " atacou " + monstro.getNome() + "!");
+        monstro.receberDano(dano);
+
+        System.out.println("Dano causado: " + dano);
+        System.out.println("Energia restante: " + energia);
+
+        return true;
+    }
+
+    public String getStatus() {
+
+        if (vida <= 0) {
+            return "Derrotado";
+        }
+
+        return "Vivo";
+    }
 }
