@@ -1,3 +1,5 @@
+import static java.lang.IO.*;
+
 public class PagamentoCartaoCredito extends FormaPagamento {
     private double limiteDisponivel;
 
@@ -11,11 +13,11 @@ public class PagamentoCartaoCredito extends FormaPagamento {
         if (limiteDisponivel >= getValor()) {
             limiteDisponivel -= getValor();
             setAprovado(true);
-            IO.println("[CARTÃO] Pagamento aprovado! Limite restante: R$ " + String.format("%.2f", limiteDisponivel));
+            println("[CARTÃO] Pagamento aprovado! Limite restante: R$ " + String.format("%.2f", limiteDisponivel));
             return true;
         }
         setAprovado(false);
-        IO.println("[CARTÃO] Pagamento recusado. Limite indisponível.");
+        println("[CARTÃO] Pagamento recusado. Limite indisponível.");
         return false;
     }
 

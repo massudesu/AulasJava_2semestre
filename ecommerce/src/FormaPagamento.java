@@ -15,7 +15,7 @@ public abstract class FormaPagamento {
     }
 
     public abstract boolean processar();
-    
+
     public String getIdTransacao() {
         return idTransacao;
     }

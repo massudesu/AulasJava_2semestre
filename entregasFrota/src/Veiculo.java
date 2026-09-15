@@ -6,7 +6,7 @@ public abstract class Veiculo {
 
     public Veiculo(String placa, String modelo, double custoPorKm) {
         if (custoPorKm <= 0) {
-            System.out.println("O custo por quilometro deve ser maior que zero!");
+            IO.println("O custo por quilometro deve ser maior que zero!");
             this.custoPorKm = 0.1;
         } else {
             this.custoPorKm = custoPorKm;

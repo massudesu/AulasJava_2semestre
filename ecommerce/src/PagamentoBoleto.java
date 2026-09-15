@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import static java.lang.IO.*;
 
 public class PagamentoBoleto extends FormaPagamento {
     private final LocalDate dataVencimento;
@@ -11,9 +12,9 @@ public class PagamentoBoleto extends FormaPagamento {
     @Override
     public boolean processar() {
         setAprovado(true);
-        IO.println("[BOLETO] Boleto gerado com sucesso!");
-        IO.println("        Vencimento: " + dataVencimento);
-        IO.println("        Aguardando compensação bancária.");
+        println("[BOLETO] Boleto gerado com sucesso!");
+        println("        Vencimento: " + dataVencimento);
+        println("        Aguardando compensação bancária.");
         return true;
     }
 

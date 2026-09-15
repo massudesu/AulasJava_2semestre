@@ -1,3 +1,4 @@
+import static java.lang.IO.*;
 public class PagamentoPix extends FormaPagamento {
     private double saldoConta;
 
@@ -11,11 +12,11 @@ public class PagamentoPix extends FormaPagamento {
         if (saldoConta >= getValor()) {
             saldoConta -= getValor();
             setAprovado(true);
-            IO.println("[PIX] Pagamento aprovado! Saldo restante: R$ " + String.format("%.2f", saldoConta));
+            println("[PIX] Pagamento aprovado! Saldo restante: R$ " + String.format("%.2f", saldoConta));
             return true;
         }
         setAprovado(false);
-        IO.println("[PIX] Pagamento recusado. Saldo insuficiente.");
+        println("[PIX] Pagamento recusado.");
         return false;
     }
 

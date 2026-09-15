@@ -1,7 +1,7 @@
 import java.lang.IO;
 
 void main() {
-    IO.println("=== 4 & 5. DEMONSTRAÇÃO E TESTES OBRIGATÓRIOS ===\n");
+    IO.println("");
 
     // três veiculos
     Motocicleta moto = new Motocicleta("MTO1A23", "Honda CG 160", 1.5);
